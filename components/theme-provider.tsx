@@ -1,9 +1,8 @@
-import React from 'react'
+"use client"
 
-const theme-provider = () => {
-  return (
-    <div>theme-provider</div>
-  )
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { type ThemeProviderProps } from "next-themes/dist/types"
+
+export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
-
-export default theme-provider
