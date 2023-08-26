@@ -1,9 +1,15 @@
-import React from 'react'
+"use client";
 
-const user-avatar = () => {
+import { useUser } from "@clerk/nextjs";
+
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
+
+export const UserAvatar = () => {
+  const { user } = useUser();
+
   return (
-    <div>user-avatar</div>
-  )
-}
-
-export default user-avatar
+    <Avatar className="h-12 w-12">
+      <AvatarImage src={user?.imageUrl} />
+    </Avatar>
+  );
+};
